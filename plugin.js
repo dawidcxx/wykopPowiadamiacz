@@ -1,8 +1,13 @@
 (function() {
+
+
     var btn = document.createElement('button');
     btn.innerHTML = 'powiadom';
 
-    $(btn).on('click', function() {
+    btn.style.transform = 'scale(0.7)';
+
+    $(btn).on('click', function(e) {
+        e.preventDefault();
         var res = [];
 
         $(this).parent().find('.voters-list > a').each(function(i) {
@@ -19,14 +24,18 @@
 
         //http://stackoverflow.com/questions/6677035/jquery-scroll-to-element
         $('html, body').stop().animate({
-            'scrollTop': curr.offset().top - 40
+            'scrollTop': curr.offset().top - 100
         }, 900, 'swing', function() {
             window.location.hash = curr;
         });
 
     })
 
+
     $('.showVoters').on('click', function() {
         $(this).parent().parent().parent().append(btn);
     })
+
 }());
+
+
