@@ -25,9 +25,9 @@
         //http://stackoverflow.com/questions/6677035/jquery-scroll-to-element
         $('html, body').stop().animate({
             'scrollTop': curr.offset().top - 100
-        }, 900, 'swing', function() {
-            window.location.hash = curr;
-        });
+        }, 900, 'swing');
+
+        return false;
 
     })
 
